@@ -8,4 +8,4 @@ let length (list: 'a list): int =
 let () = 
     assert (length [1; 2; 3] = 3);
     assert (length ["ab"; "cd"; "ef"; "gh"] = 4);
-    assert (length [] = 0)
+    assert (length [] = 0);

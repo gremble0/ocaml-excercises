@@ -1,4 +1,6 @@
 *.cmx
 *.cmi
+*.cmo
+*.out
 *.o
 *.json
