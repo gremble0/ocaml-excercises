@@ -1,15 +1,5 @@
-let rev (list: 'a list): 'a list = 
-    let rec rev' (list: 'a list) (builder: 'a list): 'a list =
-        match list with
-        | [] -> builder
-        | x :: rest -> rev' rest (x :: builder)
-    in rev' list []
-
-let is_palindrome (list: 'a list): bool = 
-    let reversed_list = rev list in
-    if list = reversed_list
-        then true
-        else false
+(*Could also use our custom made list reverse*)
+let is_palindrome (list: 'a list) = list = List.rev list
 
 let () = 
     assert (is_palindrome [1; 2; 3] = false);
