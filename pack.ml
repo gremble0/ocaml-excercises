@@ -2,13 +2,13 @@ let pack (list: 'a list): 'a list list =
     let rec pack' (list: 'a list) (builder: 'a list): 'a list list =
         match list with
         | [] -> [builder]
-        | y :: rest ->
-            if List.hd builder = y 
-            then pack' rest (y :: builder)
-            else builder :: pack' rest [y] 
+        | element :: rest ->
+            if List.hd builder = element 
+            then pack' rest (element :: builder)
+            else builder :: pack' rest [element] 
     in match list with
     | [] -> []
-    | x :: list -> pack' list [x] 
+    | x :: rest -> pack' rest [x] 
 
 let () =
     assert (pack [1; 2; 3] = [[1]; [2]; [3]]);
